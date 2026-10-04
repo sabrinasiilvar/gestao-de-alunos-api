@@ -28,13 +28,16 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Instalar dependências
         run: npm ci
 
+      - name: Criar arquivo .env
+        run: |
+          cp .env.example .env
+          sed -i 's|^MONGODB_URI=.*|MONGODB_URI=mongodb://127.0.0.1:27017/gestao-de-alunos-test|' .env
+
       - name: Executar testes
         run: npm test
-        env:
-          MONGODB_URI: mongodb://127.0.0.1:27017/gestao-de-alunos-test

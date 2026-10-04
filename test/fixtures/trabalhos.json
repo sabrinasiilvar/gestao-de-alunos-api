@@ -1,0 +1,45 @@
+{
+  "aluno": {
+    "nome": "Fernanda Alves",
+    "email": "fernanda.alves@example.com",
+    "matricula": "2025101",
+    "senha": "senha789"
+  },
+  "disciplinaMatriculada": "disciplina-programacao-web",
+  "entregas": [
+    {
+      "titulo": "Formulário de Contato",
+      "descricao": "Formulário em HTML com validação em JavaScript."
+    },
+    {
+      "titulo": "Consumo de API REST",
+      "descricao": "Página que lista dados obtidos de uma API pública com fetch."
+    }
+  ],
+  "entregasInvalidas": [
+    {
+      "descricao": "o título não for informado",
+      "dados": { "disciplinaId": "disciplina-programacao-web" },
+      "status": 400,
+      "erro": "Os campos \"disciplinaId\" e \"titulo\" são obrigatórios."
+    },
+    {
+      "descricao": "a disciplina não for informada",
+      "dados": { "titulo": "Trabalho sem disciplina" },
+      "status": 400,
+      "erro": "Os campos \"disciplinaId\" e \"titulo\" são obrigatórios."
+    },
+    {
+      "descricao": "a disciplina não existir",
+      "dados": { "disciplinaId": "disciplina-inexistente", "titulo": "Trabalho perdido" },
+      "status": 404,
+      "erro": "Disciplina com id \"disciplina-inexistente\" não encontrada."
+    },
+    {
+      "descricao": "o aluno não estiver matriculado na disciplina",
+      "dados": { "disciplinaId": "disciplina-historia", "titulo": "Resumo - Idade Média" },
+      "status": 409,
+      "erro": "O aluno não está matriculado nesta disciplina."
+    }
+  ]
+}

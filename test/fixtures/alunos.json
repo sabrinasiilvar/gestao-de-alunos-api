@@ -1,0 +1,46 @@
+{
+  "validos": [
+    {
+      "nome": "Diego Ferreira",
+      "email": "diego.ferreira@example.com",
+      "matricula": "2025001",
+      "senha": "senha123"
+    },
+    {
+      "nome": "Elisa Rocha",
+      "email": "elisa.rocha@example.com",
+      "matricula": "2025002",
+      "senha": "senha456"
+    }
+  ],
+  "invalidos": [
+    {
+      "descricao": "o nome não for informado",
+      "dados": { "email": "sem.nome@example.com", "matricula": "2025901", "senha": "senha123" },
+      "status": 400,
+      "erro": "Os campos \"nome\", \"email\", \"matricula\" e \"senha\" são obrigatórios."
+    },
+    {
+      "descricao": "o e-mail não for informado",
+      "dados": { "nome": "Sem Email", "matricula": "2025902", "senha": "senha123" },
+      "status": 400,
+      "erro": "Os campos \"nome\", \"email\", \"matricula\" e \"senha\" são obrigatórios."
+    },
+    {
+      "descricao": "a matrícula não for informada",
+      "dados": { "nome": "Sem Matricula", "email": "sem.matricula@example.com", "senha": "senha123" },
+      "status": 400,
+      "erro": "Os campos \"nome\", \"email\", \"matricula\" e \"senha\" são obrigatórios."
+    },
+    {
+      "descricao": "a senha não for informada",
+      "dados": { "nome": "Sem Senha", "email": "sem.senha@example.com", "matricula": "2025903" },
+      "status": 400,
+      "erro": "Os campos \"nome\", \"email\", \"matricula\" e \"senha\" são obrigatórios."
+    }
+  ],
+  "duplicado": {
+    "status": 409,
+    "erro": "Já existe um aluno cadastrado com essa matrícula ou e-mail."
+  }
+}

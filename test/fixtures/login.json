@@ -1,0 +1,32 @@
+{
+  "falhas": [
+    {
+      "descricao": "a senha informada for inválida",
+      "email": "admin@escola.com",
+      "senha": "senha-incorreta",
+      "status": 401,
+      "erro": "E-mail ou senha inválidos."
+    },
+    {
+      "descricao": "o e-mail não estiver cadastrado",
+      "email": "nao.cadastrado@example.com",
+      "senha": "123456",
+      "status": 401,
+      "erro": "E-mail ou senha inválidos."
+    },
+    {
+      "descricao": "a senha não for informada",
+      "email": "admin@escola.com",
+      "senha": "",
+      "status": 400,
+      "erro": "Os campos \"email\" e \"senha\" são obrigatórios."
+    },
+    {
+      "descricao": "o e-mail não for informado",
+      "email": "",
+      "senha": "admin123",
+      "status": 400,
+      "erro": "Os campos \"email\" e \"senha\" são obrigatórios."
+    }
+  ]
+}
